@@ -26,6 +26,14 @@ int main(int argc, const char * argv[]) {
             NSLog(@"%@", item);
         }
         
+        BNRItem *item = [[BNRItem alloc] init];
+        [item setItemName:@"Red Sofa"];
+        [item setSerialName:@"A1B2C"];
+        [item setValueInDollars:100];
+        
+        NSLog(@"%@, %@, %@, %d", [item itemName], [item serialName], [item dateCreated], [item valueInDollars]);
+        
+        
         // Destroy the mutable array object
         items = nil;
     
