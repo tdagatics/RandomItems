@@ -17,4 +17,17 @@
     NSDate *_dateCreated;
 }
 
+// Add getters and setters for each instance variable
+
+-(void)setItemName:(NSString *)str;
+-(NSString *)itemName;
+
+-(void)setSerialName:(NSString *)str;
+-(NSString *)serialName;
+
+-(void)setValueInDollars:(int)v;
+-(int)valueInDollars;
+
+-(NSDate *)dateCreated;
+
 @end
