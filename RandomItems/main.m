@@ -17,6 +17,11 @@ int main(int argc, const char * argv[]) {
         [items addObject:@"Two"];
         [items addObject:@"Three"];
         
+        // Send another message, insertObject:atIndex:, to the same array object
+        [items insertObject:@"Zero" atIndex:0];
+        
+        // Destroy the mutable array object
+        items = nil;
     
     }
     return 0;
