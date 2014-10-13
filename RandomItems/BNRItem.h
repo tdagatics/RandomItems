@@ -17,6 +17,12 @@
     NSDate *_dateCreated;
 }
 
+// Add two new initializers
+// Designated initializer for BNRItem
+-(instancetype)initWithItemName:(NSString *)name valueinDollars:(int)value serialName:(NSString *)sNumber;
+
+-(instancetype)initWithItemName:(NSString *)name;
+
 // Add getters and setters for each instance variable
 
 -(void)setItemName:(NSString *)str;
