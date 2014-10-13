@@ -27,11 +27,17 @@ int main(int argc, const char * argv[]) {
         }
         
         BNRItem *item = [[BNRItem alloc] init];
-        [item setItemName:@"Red Sofa"];
-        [item setSerialName:@"A1B2C"];
-        [item setValueInDollars:100];
+ //       [item setItemName:@"Red Sofa"];
+   //     [item setSerialName:@"A1B2C"];
+     //   [item setValueInDollars:100];
+       
+        // Dot syntax
         
-        NSLog(@"%@, %@, %@, %d", [item itemName], [item serialName], [item dateCreated], [item valueInDollars]);
+        item.itemName = @"Red Sofa";
+        item.serialName = @"A1B2C";
+        item.valueInDollars = 100;
+        
+        NSLog(@"%@", item);
         
         
         // Destroy the mutable array object
