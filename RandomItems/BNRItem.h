@@ -10,12 +10,13 @@
 
 @interface BNRItem : NSObject
 
-{
-    NSString *_itemName;
-    NSString *_serialName;
-    int _valueInDollars;
-    NSDate *_dateCreated;
-}
+@property BNRItem *containedItem;
+@property BNRItem *container;
+
+@property NSString *itemName;
+@property NSString *serialName;
+@property int valueInDollars;
+@property NSDate *dateCreated;
 
 +(instancetype)randomItem;
 
@@ -25,19 +26,14 @@
 
 -(instancetype)initWithItemName:(NSString *)name;
 
+-(void)setContainedItem:(BNRItem *)item;
+-(BNRItem *)containedItem;
+
+-(void)setContainer:(BNRItem *)item;
+-(BNRItem *)container;
+
+
 -(instancetype)initWithItemName:(NSString *)name serialName:(NSString *)sNumber;
 
-// Add getters and setters for each instance variable
-
--(void)setItemName:(NSString *)str;
--(NSString *)itemName;
-
--(void)setSerialName:(NSString *)str;
--(NSString *)serialName;
-
--(void)setValueInDollars:(int)v;
--(int)valueInDollars;
-
--(NSDate *)dateCreated;
 
 @end

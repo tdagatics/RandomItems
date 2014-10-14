@@ -14,13 +14,16 @@ int main(int argc, const char * argv[]) {
         // insert code here...
         NSMutableArray *items = [[NSMutableArray alloc] init];
        
-        for (int i = 0; i < 10; i++) {
-            BNRItem *item = [BNRItem randomItem];
-            [items addObject:item];
-            
-        }
+        BNRItem *backpack = [[BNRItem alloc] initWithItemName:@"Backpack"];
+        [items addObject:backpack];
         
+        BNRItem *calculator = [[BNRItem alloc] initWithItemName:@"Calculator"];
+        [items addObject:calculator];
         
+        backpack.containedItem = calculator;
+        
+        backpack = nil;
+        calculator = nil;
         
         
         for (BNRItem *item in items) {
@@ -28,6 +31,7 @@ int main(int argc, const char * argv[]) {
         }
         
         // Destroy the mutable array object
+        NSLog(@"Setting items to nil..");
         items = nil;
     
     }

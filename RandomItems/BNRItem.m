@@ -10,37 +10,6 @@
 
 @implementation BNRItem
 
--(void)setItemName:(NSString *)str {
-    _itemName = str;
-
-}
-
--(NSString *)itemName {
-    return _itemName;
-}
-
--(void)setSerialName:(NSString *)str {
-    _serialName = str;
-
-}
-
--(NSString *)serialName {
-    return _serialName;
-}
-
--(void)setValueInDollars:(int)v {
-    _valueInDollars = v;
-
-}
-
--(int)valueInDollars {
-    return _valueInDollars;
-}
-
--(NSDate *)dateCreated {
-    return _dateCreated;
-}
-
 -(NSString *)description
 {
     NSString *descriptionString = [[NSString alloc] initWithFormat:@"%@ (%@): Worth $%d, recorded on %@", self.itemName, self.serialName, self.valueInDollars, self.dateCreated];
@@ -100,6 +69,11 @@
     BNRItem *newItem = [[self alloc] initWithItemName:randomName valueinDollars:randomValue serialName:randomSerialNumber];
     
     return newItem;
+}
+
+-(void)dealloc
+{
+    NSLog(@"Destroyed item: %@", self);
 }
 
 @end
