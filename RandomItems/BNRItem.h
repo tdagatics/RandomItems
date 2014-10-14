@@ -25,6 +25,8 @@
 
 -(instancetype)initWithItemName:(NSString *)name;
 
+-(instancetype)initWithItemName:(NSString *)name serialName:(NSString *)sNumber;
+
 // Add getters and setters for each instance variable
 
 -(void)setItemName:(NSString *)str;
