@@ -14,31 +14,15 @@ int main(int argc, const char * argv[]) {
         // insert code here...
         NSMutableArray *items = [[NSMutableArray alloc] init];
        
-        [items addObject:@"One"];
-        [items addObject:@"Two"];
-        [items addObject:@"Three"];
-        
-        // Send another message, insertObject:atIndex:, to the same array object
-        [items insertObject:@"Zero" atIndex:0];
-        
-        // For every item in the items array.. use fast enumeration
-        for (NSString *item in items) {
-            NSLog(@"%@", item);
+        for (int i = 0; i < 10; i++) {
+            BNRItem *item = [BNRItem randomItem];
+            [items addObject:item];
+            
         }
         
-        BNRItem *item = [[BNRItem alloc] init];
- //       [item setItemName:@"Red Sofa"];
-   //     [item setSerialName:@"A1B2C"];
-     //   [item setValueInDollars:100];
-       
-        // Dot syntax
-        
-        item.itemName = @"Red Sofa";
-        item.serialName = @"A1B2C";
-        item.valueInDollars = 100;
-        
-        NSLog(@"%@", item);
-        
+        for (BNRItem *item in items) {
+            NSLog(@"%@", item);
+        }
         
         // Destroy the mutable array object
         items = nil;
